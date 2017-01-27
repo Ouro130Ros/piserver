@@ -32,24 +32,11 @@
 			<div class="container">
 				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 				</button>
-				<a class="brand" href="/">AngularFlask Boilerplate</a>
+				<a class="brand" href="/">Home Server</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="container page">
-		<div id="content" class="container main" ng-view>
-		</div>
-
-		<footer id="footer" class="footer">
-			<div class="footer-left">
-				<a href="/about">About</a> |
-				<a href="/">Home</a>
-			</div>
-			<div class="footer-right">
-				<span>&copy; 2016 Arkatechture Inc.</span>
-			</div>
-		</footer>
-	</div>
+	<ng-view />
 </body>
 </html>
