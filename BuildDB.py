@@ -23,6 +23,6 @@ filesToExecute = glob.glob(os.path.join(os.getcwd(), 'DataModel', 'BoardGames', 
 for file in filesToExecute:
 	executeCommandsFromFile(file, c)
 
-
+conn.commit()
 c.close()
 conn.close()
