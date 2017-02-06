@@ -17,7 +17,7 @@ def AddTag():
     print request.form
     if not request.form or not 'tagName' in request.form or not 'tagType' in request.form:
         return "FAIL", 400
-    tagRepo = TagRepository(os.path.join(os.getcwd), 'boardgames.db') 
+    tagRepo = TagRepository(os.path.join(os.getcwd, 'boardgames.db')) 
     tagRepo.AddTag(request.form['tagName'], request.form['tagType'])
     return "OK", 200
 
