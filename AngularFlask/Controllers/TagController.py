@@ -1,4 +1,4 @@
-from Flask import Blueprint, request
+from flask import Blueprint, request
 import json
 import os
 
