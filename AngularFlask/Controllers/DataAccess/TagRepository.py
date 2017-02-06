@@ -25,8 +25,9 @@ class TagRepository(Repository):
 if __name__ == '__main__':
 	import os
 	print "Testing"
-	print os.path.join(os.getcwd(), '..', '..', '..', 'boardgames.db')
-	tr = TagRepository(os.path.join(os.getcwd(), '..', '..', '..', 'boardgames.db'))
+	print os.path.join('boardgames.db')
+	print os.getcwd()
+	tr = TagRepository('boardgames.db')
 	tr.AddTag('Test', 'Tag')
 	tr.AddTag('Another', 'Tag')
 	r = tr.GetTags()

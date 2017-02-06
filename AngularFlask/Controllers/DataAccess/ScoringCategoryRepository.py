@@ -19,3 +19,5 @@ class ScoringCategoryRepository(Repository):
 	def DeleteCategory(self, tag_ids):
 		command = "DELETE FROM BOARDGAME_SCORING_CATEGORY WHERE ROWID IN ({0})".format(','.join(str(id) for id in tag_ids))
 		super(AddCategory, self).ExecuteCommand(command)
+
+		# Clean JT

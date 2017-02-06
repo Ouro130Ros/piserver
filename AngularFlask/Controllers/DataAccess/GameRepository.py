@@ -34,9 +34,13 @@ class GameRepository(Repository):
 
 	def DeleteGame(self, game_id):
 		command = "DELETE FROM BOARDGAME WHERE ROWID = {0}".format(game_id)
+		categoryDeleteCommand = "DELETE FROM JT_BOARDGAME_SCORE_CATEGORY WHERE BOARDGAME_ROWID = {0}".format(game_id)
+		gameTagDeleteCommand = "DELETE FROM JT_BOARDGAME_TAG WHERE BOARDGAME_ROWID = {0}".format(game_id)
+
+		super(GameRepository, self).ExecuteCommand(categoryDeleteCommand)
+		super(GameRepository, self).ExecuteCommand(gameTagDeleteCommand)
 		super(GameRepository, self).ExecuteCommand(command)
-		
-		#DELETE GAME TAGS JT
+
 
 	def GetAllGames(self):
 		query = "SELECT rowid, TITLE, DESCRIPTION, MIN_PLAYERS, MAX_PLAYERS, IMAGE_PATH FROM BOARDGAME"
@@ -92,7 +96,7 @@ if __name__ == '__main__':
 	import os
 	from TagRepository import TagRepository
 	print "Testing"
-	path = os.path.join(os.getcwd(), '..', '..', '..', 'boardgames.db')
+	path = os.path.join('boardgames.db')
 	gr = GameRepository(path)
 	tr = TagRepository(path)
 
