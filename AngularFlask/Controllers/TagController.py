@@ -11,7 +11,7 @@ def ListTags():
     tagRepo = TagRepository(os.path.join(os.getcwd(), 'boardgames.db'))
     result = tagRepo.GetTags()
     print result
-    return result, 200
+    return json.dumps(result), 200
 
 @tagController.route('/api/Tags/Add', methods=["POST"])
 def AddTag():
