@@ -13,9 +13,10 @@ def ListTags():
 
 @tagController.route('/api/Tags/Add', methods=["POST"])
 def AddTag():
+    print request.json
     if not request.json or not 'tagName' in request.json or not 'tagType' in request.json:
-        return 400
+        return "FAIL", 400
     tagRepo = TagRepository(os.path.join(os.getcwd), 'boardgames.db') 
     tagRepo.AddTag(request.json['tagName'], request.json['tagType'])
-    return 200
+    return "OK", 200
 
