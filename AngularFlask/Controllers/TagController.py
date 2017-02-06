@@ -15,9 +15,9 @@ def ListTags():
 def AddTag():
     print request
     print request.form
-    if not request.json or not 'tagName' in request.json or not 'tagType' in request.json:
+    if not request.form or not 'tagName' in request.form or not 'tagType' in request.form:
         return "FAIL", 400
     tagRepo = TagRepository(os.path.join(os.getcwd), 'boardgames.db') 
-    tagRepo.AddTag(request.json['tagName'], request.json['tagType'])
+    tagRepo.AddTag(request.form['tagName'], request.form['tagType'])
     return "OK", 200
 
