@@ -9,7 +9,9 @@ tagController = Blueprint('tagController', __name__)
 @tagController.route('/api/Tags/List', methods=['GET'])
 def ListTags():
     tagRepo = TagRepository(os.path.join(os.getcwd(), 'boardgames.db'))
-    return json.dumps(tagRepo.GetTags()), 200
+    result = tagRepo.GetTags()
+    print result
+    return result, 200
 
 @tagController.route('/api/Tags/Add', methods=["POST"])
 def AddTag():
