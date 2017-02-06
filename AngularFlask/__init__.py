@@ -9,6 +9,6 @@ app.config.from_object('AngularFlask.Settings')
 
 app.url_map.strict_slashes = False
 
-from AngularFlask.Controllers import indexController, exampleAPIController
+from AngularFlask.Controllers import indexController, tagController
 app.register_blueprint(indexController)
-app.register_blueprint(exampleAPIController)
+app.register_blueprint(tagController)

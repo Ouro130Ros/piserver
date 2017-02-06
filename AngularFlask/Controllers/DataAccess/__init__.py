@@ -1,4 +1,4 @@
 from GameRepository import GameRepository
-from PlayerRespository import PlayerRespository
+from PlayerRepository import PlayerRepository
 from ScoringCategoryRepository import ScoringCategoryRepository
 from TagRepository import TagRepository
